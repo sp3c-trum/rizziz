@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <script type="module">
+      import { Buffer } from "buffer";
+      import process from "process";
+      window.Buffer = Buffer;
+      window.process = process;
+    </script>
+    <link href="/src/index.css" rel="stylesheet">
+    </head>
+    <body>
+      <script type="module" src="/src/index.jsx"></script>
+      <div id="root" class="h-[calc(100vh-5rem)]"></div>
+    </body>
+</html>
