@@ -3,14 +3,36 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <nav class="flex items-center justify-between p-4 bg-themeDarkPink text-white h-20">
-      <Link to="/"><h1 class=" text-5xl font-serif drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]">Rizziz</h1></Link>
-      <ul>
-        <li><Link to="/">Strona główna</Link></li>
-        <hr />
-        <li><Link to="/create-question">Stwórz pytanie</Link></li>
-        <hr />
-        <li><Link to="/quiz">Quiz</Link></li>
+    <nav className="flex items-center justify-between px-8 py-4 bg-themeDarkPink text-white shadow-md">
+      <Link to="/" className="text-4xl font-bold font-serif tracking-wide">
+        Rizziz
+      </Link>
+
+      <ul className="flex space-x-6">
+        <li className="">
+          <Link
+            to="/"
+            className="px-4 py-2 rounded-lg bg-themeWhite text-black font-semibold transition duration-300 hover:bg-themePink hover:text-white"
+          >
+            Strona główna
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/create-question"
+            className="px-4 py-2 rounded-lg bg-themeWhite text-black font-semibold transition duration-300 hover:bg-themePink hover:text-white"
+          >
+            Stwórz pytanie
+          </Link>
+        </li>
+        <li>
+          <Link
+            to="/quiz"
+            className="px-4 py-2 rounded-lg bg-themeWhite text-black font-semibold transition duration-300 hover:bg-themePink hover:text-white"
+          >
+            Quiz
+          </Link>
+        </li>
       </ul>
     </nav>
   );

@@ -3,18 +3,41 @@ import { Link } from "react-router-dom";
 
 const Home = () => {
   return (
-    <div class="p-2 bg-themeLightPink h-screen">
-      <h1 class="text-5xl">RIZZIZ - Prototyp (interfejs robiony bardzo na szybko)</h1>
-      <p>Zapisuj pytania i wykonuj quizy!</p>
-      <hr />
-      <div class="my-4">
-        <Link to="/quiz" >
-          <button class="text-white bg-themePink p-3 border-radius rounded my-1 hover:bg-themeDarkPink">Rozpocznij quiz z losowych pytań</button>
-        </Link>
-        <br />
-        <Link to="/create-question">
-          <button class="text-white bg-themePink p-3 border-radius rounded my-1 hover:bg-themeDarkPink">Stwórz pytanie</button>
-        </Link>
+    <div className="bg-themeLightPink min-h-full flex flex-col items-center">
+      {/* Baner */}
+      <div className="w-full bg-themeWhite text-black py-12 text-center shadow-lg">
+        <h1 className="text-6xl font-bold drop-shadow-lg">RIZZIZ</h1>
+        <p className="text-xl mt-2">Twórz pytania i testuj swoją wiedzę!</p>
+      </div>
+
+      {/* Sekcja główna */}
+      <div className="container mx-auto mt-10 p-6 bg-white rounded-xl shadow-md w-11/12 max-w-3xl text-center">
+        <h2 className="text-4xl font-semibold text-themeDarkPink">Witaj w Rizziz!</h2>
+        <p className="text-lg text-gray-600 mt-2">Zapisuj pytania i wykonuj quizy, aby sprawdzić swoją wiedzę!</p>
+        <hr className="my-4 border-themePink" />
+
+        {/* Przycisk do quizu */}
+        <div className="mt-6 space-y-4">
+          <Link to="/quiz">
+            <button className="w-full my-2 text-white bg-themePink py-3 px-6 rounded-lg shadow-md text-lg font-semibold transition-all hover:bg-themeDarkPink hover:scale-105">
+              Rozpocznij quiz z losowych pytań
+            </button>
+          </Link>
+
+          {/* Przycisk do tworzenia pytania */}
+          <Link to="/create-question">
+            <button className="w-full my-2 text-white bg-themePink py-3 px-6 rounded-lg shadow-md text-lg font-semibold transition-all hover:bg-themeDarkPink hover:scale-105">
+              Stwórz pytanie
+            </button>
+          </Link>
+
+          {/* Nowe funkcje quizu */}
+          <Link to="/quiz-settings">
+            <button className="w-full my-2 text-white bg-themePink py-3 px-6 rounded-lg shadow-md text-lg font-semibold transition-all hover:bg-themeDarkPink hover:scale-105">
+              Wybierz opcje quizu
+            </button>
+          </Link>
+        </div>
       </div>
     </div>
   );
