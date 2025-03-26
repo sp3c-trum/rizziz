@@ -12,7 +12,7 @@ const Timer = ({ initialTime, onTimeUp }) => {
     return () => clearInterval(timer);
   }, [time, onTimeUp]);
 
-  return <div class="mb-3">Pozostały czas: {time}s</div>;
+  return <div className="mb-3">Pozostały czas: {time}s</div>;
 };
 
 export default Timer;

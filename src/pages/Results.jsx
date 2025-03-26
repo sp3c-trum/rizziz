@@ -14,7 +14,7 @@ const Results = () => {
   };
 
   return (
-    <div class="p-2 bg-themeLightPink text-white flex items-center justify-center flex-col h-full">
+    <div className="p-2 bg-themeLightPink text-white flex items-center justify-center flex-col h-full">
       <h2>Wynik:</h2>
       <p>
         Osiągnąłeś <strong>{score}</strong> z <strong>{questions.length} pytań!!!</strong>

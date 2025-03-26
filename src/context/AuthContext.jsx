@@ -57,8 +57,28 @@ export const AuthProvider = ({ children }) => {
     }
   };
 
+  const fetchCategories = async () => {
+    try {
+      const querySnapshot = await getDocs(collection(db, "categories"));
+      return querySnapshot.docs.map(doc => doc.data().name);
+    } catch (error) {
+      console.error("Nie udało się pobrać kategorii: ", error);
+      return [];
+    }
+  };
+  
+  const addCategory = async (categoryName) => {
+    try {
+      await addDoc(collection(db, "categories"), {
+        name: categoryName
+      });
+    } catch (error) {
+      console.error("Nie dodano kategorii: ", error);
+    }
+  };
+
   return (
-    <AuthContext.Provider value={{ user, login, register, logout, addQuestion, fetchQuestions }}>
+    <AuthContext.Provider value={{ user, login, register, logout, addQuestion, fetchQuestions, fetchCategories, addCategory }}>
       {!loading && children}
     </AuthContext.Provider>
   );

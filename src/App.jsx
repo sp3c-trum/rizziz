@@ -9,6 +9,7 @@ import Results from "./pages/Results";
 import Navbar from "./components/Navbar";
 import { AuthProvider } from "./context/AuthContext";
 import Timer from "./components/Timer";
+import QuizConfiguration from "./pages/QuizConfiguration";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
             <Route path="/create-question" element={<CreateQuestion />} />
             <Route path="/quiz" element={<Quiz />} />
             <Route path="/results" element={<Results />} />
+            <Route path="/quiz-settings" element={<QuizConfiguration />} />
           </Routes>
         </Router>
       </AuthProvider>
